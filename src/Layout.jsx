@@ -3,7 +3,7 @@ import Header from "./components/header/Header"
 
 const Layout = () => {
   return (
-    <div className="bg-gray-800 text-white h-screen">
+    <div className="bg-gray-800 text-white w-full h-screen">
         <Header />
         <Outlet />
     </div>

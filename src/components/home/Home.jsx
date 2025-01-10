@@ -21,6 +21,7 @@ import {
   setTrendingTvShows,
 } from "../../store/slices/appSlice";
 import CarouselContainer from "./carousel/CarouselContainer";
+import MainContainer from "./mainContainer/MainContainer";
 
 const Home = () => {
   const nowPlayingMovies = useSelector((state) => state.app.nowPlayingMovies);
@@ -46,6 +47,7 @@ const Home = () => {
   return (
     <div className="w-full">
         <CarouselContainer />
+        <MainContainer />
     </div>
   );
 };

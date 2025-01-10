@@ -22,7 +22,7 @@ const CarouselContainer = () => {
     }
   }, [])
   return (
-    <div className="h-[500px] w-screen relative">
+    <div className="h-[500px] w-full relative">
         <img className="h-full w-full object-cover opacity-[0.4]" src={getImageCdnUrl('original', nowPlayingMovies[carouselIndex]?.backdrop_path)} alt="bannner_img" />
         <div className="absolute bottom-[10%]">
             <CarouselDetails data={nowPlayingMovies[carouselIndex]} />
