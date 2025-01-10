@@ -8,7 +8,6 @@ const useFetchMovieDetails = (url, dispatchFunction, movieData) => {
     const fetchMovieDetails = async () => {
         const res = await fetch(url, TMDB_API_OPTIONS);
         const data = await res.json();
-        console.log(url +" >>", data?.results )
         dispatch(dispatchFunction(data?.results));
     }
 

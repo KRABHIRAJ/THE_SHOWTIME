@@ -20,6 +20,7 @@ import {
   setTrendingMovies,
   setTrendingTvShows,
 } from "../../store/slices/appSlice";
+import CarouselContainer from "./carousel/CarouselContainer";
 
 const Home = () => {
   const nowPlayingMovies = useSelector((state) => state.app.nowPlayingMovies);
@@ -42,7 +43,11 @@ const Home = () => {
   useFetchMovieDetails(TRENDING_TV_URL, setTrendingTvShows, popularTvShows);
   useFetchMovieDetails(TOP_RATED_TV_URL, setTopRatedTvShows, trendingTvShows);
   useFetchMovieDetails(POPULAR_TV_URL, setPopularTvShows, topRatedTvShows);
-  return <div className="text-white">Home</div>;
+  return (
+    <div className="w-full">
+        <CarouselContainer />
+    </div>
+  );
 };
 
 export default Home;
