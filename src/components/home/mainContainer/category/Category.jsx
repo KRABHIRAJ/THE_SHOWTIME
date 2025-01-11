@@ -35,7 +35,7 @@ const Category = ({ title, movieData, tvData }) => {
                     {
                         movieData?.map((movie) => {
                            return  <div key={movie.id}>
-                                <MovieAndTvCard data={movie}/>
+                                <MovieAndTvCard type={selectedType} data={movie}/>
                             </div>
                         })
                     }
@@ -45,7 +45,7 @@ const Category = ({ title, movieData, tvData }) => {
                     {
                         tvData?.map((tv) => {
                            return  <div key={tv.id}>
-                                <MovieAndTvCard data={tv}/>
+                                <MovieAndTvCard type={selectedType} data={tv}/>
                             </div>
                         })
                     }

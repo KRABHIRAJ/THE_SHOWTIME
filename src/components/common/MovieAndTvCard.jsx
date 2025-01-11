@@ -1,13 +1,18 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
 import { getImageCdnUrl } from "../../utils/constants";
 import StarIcon from "@mui/icons-material/Star";
 
-const MovieAndTvCard = ({ data }) => {
+const MovieAndTvCard = ({ type, data }) => {
+  const navigate = useNavigate();
   if (!data) return;
   const image_path = data?.poster_path || data?.profile_path;
+  const handleClick = () => {
+    navigate(`/${type}/watch/${data.id}`);
+  }
   return (
-    <div className="bg-black max-w-[182px] p-2 w-fit rounded-md">
+    <div onClick={handleClick} className="bg-black max-w-[182px] p-2 w-fit rounded-md">
         <div className="min-w-[150px] flex-shrink-0 cursor-pointer h-[160px] md:h-[200px] lg:h-[250px]">
         <img
             src={getImageCdnUrl("w500", image_path)}

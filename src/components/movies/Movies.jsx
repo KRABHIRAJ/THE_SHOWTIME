@@ -33,7 +33,7 @@ const Movies = () => {
 
   return (
     <div className="h-full">
-      <DiscoverMovieAndTv data={discoverMovie?.results} />
+      <DiscoverMovieAndTv type={"movie"} data={discoverMovie?.results} />
       <div className="flex justify-center">
           <ResponsivePagination
             extraClassName="pb-5 w-fit"

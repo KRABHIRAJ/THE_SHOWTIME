@@ -27,14 +27,23 @@ export const SEARCH_MOVIE_URL = (query) => {
 
 
 
-export const getVideoUrl = (movieId) => {
-    return `https://showtime.krabhiraj99.workers.dev/3/movie/${movieId}/videos?language=en-US`;
+export const getVideoUrl = (movieId, category) => {
+    return `https://showtime.krabhiraj99.workers.dev/3/${category}/${movieId}/videos?language=en-US`;
 }
 
 export const getYoutubeUrl = (key) => {
-    return `https://www.youtube.com/embed/${key}?autoplay=1&mute=1&loop=1&modestbranding=1&controls=0&rel=0&fs=0&iv_load_policy=3`
+    return `https://www.youtube.com/embed/${key}?autoplay=1&mute=1&loop=1`
 }
 
 export const getImageCdnUrl = (size, path) => {
     return `https://image.tmdb.org/t/p/${size}${path}`
+}
+
+
+export const getSimilarUrl = (id, category) => {
+    return `https://showtime.krabhiraj99.workers.dev/3/${category}/${id}/similar`
+}
+
+export const findByIdUrl = (id, category) => {
+    return `https://showtime.krabhiraj99.workers.dev/3/${category}/${id}`
 }

@@ -2,7 +2,7 @@
 
 import MovieAndTvCard from "./MovieAndTvCard";
 
-const DiscoverMovieAndTv = ({data}) => {
+const DiscoverMovieAndTv = ({type, data}) => {
     if(data.length === 0) return;
 
     return (
@@ -11,7 +11,7 @@ const DiscoverMovieAndTv = ({data}) => {
               data.map((data) => {
                 return ((data?.profile_path == null && data?.poster_path===null) || data?.poster_path === null) ? null : 
                    <div className="flex justify-center" key={data?.id}>
-                      <MovieAndTvCard  data={data} />
+                      <MovieAndTvCard type={type} data={data} />
                   </div>
               })
           }
