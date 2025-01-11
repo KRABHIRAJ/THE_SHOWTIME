@@ -12,7 +12,7 @@ const MainContainer = () => {
     const topRatedTvShows = useSelector((state) => state.app.topRatedTvShows);
   return (
     <div className="p-4 w-full bg-gray-700">
-        <Category title={'Upcoming / On The Air'} movieData={nowPlayingMovies} tvData={nowPlayingTvShows} />
+        <Category title={'Now Playing'} movieData={nowPlayingMovies} tvData={nowPlayingTvShows} />
         <Category title={'Trending'} movieData={trendingMovies} tvData={trendingTvShows} />
         <Category title={'Top Rated'} movieData={topRatedMovies} tvData={topRatedTvShows} />
         <Category title={'Popular'} movieData={popularMovies} tvData={popularTvShows} />

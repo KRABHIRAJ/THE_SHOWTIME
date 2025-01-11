@@ -13,3 +13,11 @@
       scrollbar-width: none;  /* Firefox */
 }
 }
+
+/* To style the pagination panel */
+:root {
+    --pagination-color: #fff;
+    --pagination-hover-color: #000000;
+    --pagination-bg:#374151;
+    --pagination-active-bg:#000000;
+  }

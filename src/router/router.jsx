@@ -7,6 +7,7 @@ import TvShow from "../components/tvShow/TvShow";
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/tv" element={<TvShow />} />

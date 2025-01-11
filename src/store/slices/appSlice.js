@@ -49,10 +49,10 @@ const appSlice = createSlice({
       state.tvShowData = [...action.payload];
     },
     setDiscoverMovie: (state, action) => {
-      state.discoverMovie = [...action.payload];
+      state.discoverMovie = {...action.payload};
     },
     setDiscoverTvSeries: (state, action) => {
-      state.discoverTvSeries = [...action.payload];
+      state.discoverTvSeries = {...action.payload};
     },
     setSearchData: (state, action) => {
       state.searchData = [...action.payload];
