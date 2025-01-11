@@ -8,15 +8,15 @@ const MovieAndTvCard = ({ data }) => {
   const image_path = data?.poster_path || data?.profile_path;
   return (
     <div className="bg-black max-w-[182px] p-2 w-fit rounded-md">
-        <div className="  flex-shrink-0 cursor-pointer  h-[160px]  md:h-[200px]  lg:h-[250px]">
+        <div className="min-w-[150px] flex-shrink-0 cursor-pointer h-[160px] md:h-[200px] lg:h-[250px]">
         <img
             src={getImageCdnUrl("w500", image_path)}
             alt={data?.original_title}
-            className=" h-[160px] md:h-[200px]  lg:h-[250px] object-cover rounded-md transition-transform duration-300 hover:scale-95"
+            className="min-w-[150px] h-[160px] md:h-[200px] lg:h-[250px] object-cover rounded-md transition-transform duration-300 hover:scale-95"
         />
         </div>
         <div>
-        <p className="text-sm font-semibold max-w-[100px] mt-2 line-clamp-1">
+        <p className="text-sm max-w-[120px] font-semibold mt-2 line-clamp-1">
           {data?.name ||
             data?.title ||
             data?.original_title ||

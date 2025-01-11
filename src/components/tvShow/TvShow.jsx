@@ -40,7 +40,7 @@ const TvShow = () => {
             current={currentPage}
             total={discoverTvSeries?.total_pages}
             onPageChange={handlePageChange}
-            maxWidth={500}
+            maxWidth={300}
           />
       </div>
     </div>

@@ -40,7 +40,7 @@ const Movies = () => {
             current={currentPage}
             total={discoverMovie?.total_pages}
             onPageChange={handlePageChange}
-            maxWidth={500}
+            maxWidth={300}
           />
       </div>
     </div>
