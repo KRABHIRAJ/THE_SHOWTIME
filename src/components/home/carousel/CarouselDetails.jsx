@@ -3,8 +3,14 @@
 import StarIcon from "@mui/icons-material/Star";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { getImageCdnUrl } from "../../../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const CarouselDetails = ({ data }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/movie/watch/${data.id}`);
+  }
+
   return (
     <div className="flex items-center px-4 max-w-[75%] ">
       <div className="flex-[0.2]">
@@ -20,7 +26,7 @@ const CarouselDetails = ({ data }) => {
         <p className="font-semibold text-sm">
           Released : <span className="ml-1">{data?.release_date}</span>
         </p>
-        <button className="bg-gray-600 p-2 px-4 mt-3 rounded-lg hover:bg-gray-700">
+        <button onClick={handleClick} className="bg-gray-600 p-2 px-4 mt-3 rounded-lg hover:bg-gray-700">
           Watch Now <PlayCircleIcon />{" "}
         </button>
       </div>

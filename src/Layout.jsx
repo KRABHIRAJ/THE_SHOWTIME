@@ -3,7 +3,7 @@ import Header from "./components/header/Header"
 
 const Layout = () => {
   return (
-    <div className="bg-gray-800 text-white w-full h-screen overflow-auto">
+    <div id="parentContainer" className="bg-gray-800 text-white w-full h-screen overflow-auto">
         <Header />
         <Outlet />
     </div>

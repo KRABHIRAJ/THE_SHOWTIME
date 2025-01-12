@@ -41,6 +41,8 @@ const WatchMovieAndTv = () => {
     fetchTrailerVideo();
     fetchCurrentDetail();
     fetchSimilarVideo();
+    const scrollContainer = document.querySelector("#parentContainer");
+    scrollContainer?.scrollTo(0, 0);
   }, [params?.id]);
   return (
     <div>
