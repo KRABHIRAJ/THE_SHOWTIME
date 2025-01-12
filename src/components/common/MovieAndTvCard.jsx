@@ -9,7 +9,7 @@ const MovieAndTvCard = ({ type, data }) => {
   if (!data) return;
   const image_path = data?.poster_path || data?.profile_path;
   const handleClick = () => {
-    navigate(`/${type}/watch/${data.id}`);
+    type ? navigate(`/${type}/watch/${data.id}`) : navigate(`/${data.media_type}/watch/${data.id}`) 
   }
   return (
     <div onClick={handleClick} className="bg-black max-w-[182px] p-2 w-fit rounded-md">
@@ -31,7 +31,7 @@ const MovieAndTvCard = ({ type, data }) => {
           <p>{data?.first_air_date || data?.release_date}</p>
           <div className="text-xs flex gap-x-1 items-center">
             <StarIcon sx={{ color: "#facc15", fontSize: "16px" }} />
-            <p>{data?.vote_average.toFixed(1)}</p>
+            <p>{data?.vote_average?.toFixed(1)}</p>
           </div>
         </div>
       </div>

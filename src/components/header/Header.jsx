@@ -2,13 +2,30 @@ import { useDispatch, useSelector } from "react-redux";
 import logo3 from "../../assets/logo3.png";
 import HeaderMenu from "./headerMenu/HeaderMenu";
 import SearchIcon from "@mui/icons-material/Search";
-import { setSearchQuery } from "../../store/slices/appSlice";
-import { Link } from "react-router-dom";
+import { setSearchData, setSearchQuery } from "../../store/slices/appSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { SEARCH_MOVIE_URL } from "../../utils/constants";
+import axios from "axios";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const query = useSelector((state) => state.app.searchQuery);
 
+  const fetchSearchData = async () => {
+    const response = await axios.get(SEARCH_MOVIE_URL(query));
+    dispatch(setSearchData(response?.data?.results));
+    dispatch(setSearchQuery(""));
+    navigate('/search')
+    
+  }
+
+  const handleKeyPress = async (e) =>{
+    if(e.key === "Enter"){
+      fetchSearchData();
+      dispatch(setSearchQuery(""));
+    }
+  }
   return (
     <div className="sticky top-0 z-50 bg-black shadow-2xl px-4 flex text-white justify-between">
       <Link to="/">
@@ -24,8 +41,11 @@ const Header = () => {
             placeholder="Search for Movies ..."
             value={query}
             onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+            onKeyDown={(e) => handleKeyPress(e)}
           />
-          <SearchIcon className="p-1 cursor-pointer hover:bg-black hover:rounded-md transition-all " />
+          <div onClick={fetchSearchData}>
+            <SearchIcon className="p-1 cursor-pointer hover:bg-black hover:rounded-md transition-all " />
+          </div>
         </div>
 
         <div className=" flex items-center gap-x-4">
