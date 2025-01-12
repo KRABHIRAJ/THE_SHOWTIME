@@ -4,7 +4,7 @@ import { DISCOVER_MOVIE_URL, TMDB_API_OPTIONS } from "../../utils/constants";
 import useFetchMovieDetails from "../../utils/hooks/useFetchMovieDetails";
 import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/bootstrap.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DiscoverMovieAndTv from "../common/DiscoverMovieAndTv";
 
 const Movies = () => {
@@ -18,6 +18,12 @@ const Movies = () => {
   );
 
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector("#parentContainer");
+    scrollContainer?.scrollTo(0, 0);
+  }, [currentPage]);
+
   if (
     discoverMovie?.results?.length === 0 ||
     discoverMovie?.results?.length === undefined
@@ -35,13 +41,13 @@ const Movies = () => {
     <div className="h-full">
       <DiscoverMovieAndTv type={"movie"} data={discoverMovie?.results} />
       <div className="flex justify-center">
-          <ResponsivePagination
-            extraClassName="pb-5 w-fit"
-            current={currentPage}
-            total={discoverMovie?.total_pages}
-            onPageChange={handlePageChange}
-            maxWidth={300}
-          />
+        <ResponsivePagination
+          extraClassName="pb-5 w-fit"
+          current={currentPage}
+          total={discoverMovie?.total_pages}
+          onPageChange={handlePageChange}
+          maxWidth={300}
+        />
       </div>
     </div>
   );

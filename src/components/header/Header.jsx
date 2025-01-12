@@ -10,7 +10,7 @@ const Header = () => {
   const query = useSelector((state) => state.app.searchQuery);
 
   return (
-    <div className="sticky top-0 z-1 bg-black shadow-2xl px-4 flex text-white justify-between">
+    <div className="sticky top-0 z-50 bg-black shadow-2xl px-4 flex text-white justify-between">
       <Link to="/">
         <div className="w-[150px] h-[50px]  cursor-pointer">
           <img src={logo3} alt="Logo" className="object-cover w-full h-full" />

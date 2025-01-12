@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setDiscoverTvSeries } from "../../store/slices/appSlice";
 import { DISCOVER_TV_SHOW_URL, TMDB_API_OPTIONS } from "../../utils/constants";
 import useFetchMovieDetails from "../../utils/hooks/useFetchMovieDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DiscoverMovieAndTv from "../common/DiscoverMovieAndTv";
 import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/bootstrap.css";
@@ -18,6 +18,12 @@ const TvShow = () => {
   );
 
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector("#parentContainer");
+    scrollContainer?.scrollTo(0, 0);
+  }, [currentPage]);
+
   if (
     discoverTvSeries?.results?.length === 0 ||
     discoverTvSeries?.results?.length === undefined
@@ -35,16 +41,16 @@ const TvShow = () => {
     <div className="h-full">
       <DiscoverMovieAndTv type={"tv"} data={discoverTvSeries?.results} />
       <div className="flex justify-center">
-          <ResponsivePagination
-            extraClassName="pb-5 w-fit"
-            current={currentPage}
-            total={discoverTvSeries?.total_pages}
-            onPageChange={handlePageChange}
-            maxWidth={300}
-          />
+        <ResponsivePagination
+          extraClassName="pb-5 w-fit"
+          current={currentPage}
+          total={discoverTvSeries?.total_pages}
+          onPageChange={handlePageChange}
+          maxWidth={300}
+        />
       </div>
     </div>
   );
-}
+};
 
-export default TvShow
+export default TvShow;
