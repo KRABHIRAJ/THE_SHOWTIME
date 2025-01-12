@@ -55,8 +55,14 @@ const WatchMovieAndTv = () => {
         allowFullScreen
       ></iframe>
       <div className="p-6">
+      <p className="font-bold text-2xl my-2 line-clamp-1">
+          {videoDetails?.name ||
+            videoDetails?.title ||
+            videoDetails?.original_title ||
+            videoDetails?.original_name}
+        </p>
         <div>
-            <p className="text-2xl font-bold">Overview: </p>
+            <p className="text-xl font-semibold">Overview: </p>
             <p>{videoDetails?.overview}</p>
         </div>
         <div className="grid grid-cols-3 gap-2 mt-6">

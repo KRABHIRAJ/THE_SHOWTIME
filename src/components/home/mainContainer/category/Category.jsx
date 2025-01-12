@@ -1,10 +1,18 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MovieAndTvCard from "../../../common/MovieAndTvCard";
 
 const Category = ({ title, movieData, tvData }) => {
   const [selectedType, setSelectedType] = useState("movie");
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector(`#${title}scrollableContainer`);
+    scrollContainer?.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [selectedType])
   return (
     <div>
       <div className="flex gap-x-3 items-center">
@@ -31,7 +39,7 @@ const Category = ({ title, movieData, tvData }) => {
       <>
         {
             selectedType === 'movie'? (
-                <div className="flex my-4 w-full overflow-scroll gap-x-2 no-scrollbar">
+                <div id={title + "scrollableContainer"} className="flex my-4 w-full overflow-scroll gap-x-2 no-scrollbar">
                     {
                         movieData?.map((movie) => {
                            return  <div key={movie.id}>
@@ -41,7 +49,7 @@ const Category = ({ title, movieData, tvData }) => {
                     }
                 </div>
             ): (
-                <div className="flex my-4 w-full overflow-scroll gap-x-2 no-scrollbar">
+                <div  id={title + "scrollableContainer"} className="flex my-4 w-full overflow-scroll gap-x-2 no-scrollbar">
                     {
                         tvData?.map((tv) => {
                            return  <div key={tv.id}>
