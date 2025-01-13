@@ -1,8 +1,10 @@
-# React + Vite
+# [The Showtime](https://the-showtime.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Designed and developed a fully responsive web application for streaming movies and TV series. The platform allows users to search for specific titles and delivers personalized recommendations for similar movies based on their selections, ensuring an engaging and seamless user experience across all devices.<br>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+=> Integrated TMDB api to fetch movie data.<br>
+=> Utilized Cloudflare Workers to effectively bypass regional restrictions on the TMDB API, ensuring seamless access to data across all locations.<br>
+=> Implemented API caching using Redux to minimize redundant API calls and enhance performance.<br>
+=> Integrated seamless page transitions through efficient routing.<br>
+=> Developed multiple custom hooks to efficiently manage API calls.<br>
+=> Implemented pagination to efficiently navigate and display movie data, enhancing user experience and ensuring seamless data exploration.<br>
