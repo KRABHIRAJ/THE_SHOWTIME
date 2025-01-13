@@ -65,7 +65,7 @@ const WatchMovieAndTv = () => {
             <p className="text-xl font-semibold">Overview: </p>
             <p>{videoDetails?.overview}</p>
         </div>
-        <div className="grid grid-cols-3 gap-2 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-6">
             {params?.type === 'tv' && <WatchDescriptionCard title={"Seasons"} subtitle={videoDetails?.number_of_seasons} />}
             {params?.type === 'movie' && <WatchDescriptionCard title={"Budget"} subtitle={`$${formatAmount(videoDetails?.budget)}`} />}
             {params?.type === 'tv' && <WatchDescriptionCard title={"Episodes"} subtitle={videoDetails?.number_of_episodes} />}

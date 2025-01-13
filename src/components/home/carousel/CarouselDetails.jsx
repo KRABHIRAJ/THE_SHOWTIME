@@ -13,10 +13,10 @@ const CarouselDetails = ({ data }) => {
 
   return (
     <div className="flex items-center px-4 max-w-[75%] ">
-      <div className="flex-[0.2]">
+      <div className="hidden md:flex md:flex-[0.2]">
         <img className="w-[150px] h-[200px] rounded-lg object-cover"  src={getImageCdnUrl('original', data?.poster_path)} alt="poster_img" />
       </div>
-      <div className=" flex-[0.8] pl-2">
+      <div className=" md:flex-[0.8] pl-2">
         <p className="font-bold text-2xl tracking-wide mb-2 line-clamp-1">{data?.original_title || data?.title}</p>
         <div className="flex gap-x-1 text-sm items-center">
           <StarIcon sx={{ color: "#facc15", fontSize: "20px" }} />

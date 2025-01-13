@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-50 bg-black shadow-2xl px-4 flex text-white justify-between">
       <Link to="/">
-        <div className="w-[150px] h-[50px]  cursor-pointer">
+        <div className="w-[100px] sm:w-[150px] h-[50px]  cursor-pointer">
           <img src={logo3} alt="Logo" className="object-cover w-full h-full" />
         </div>
       </Link>
@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className=" flex items-center gap-x-4">
+        <div className="hidden sm:flex items-center gap-x-4">
           <HeaderMenu title={"Home"} />
           <HeaderMenu title={"Movies"} />
           <HeaderMenu title={"TV"} />
